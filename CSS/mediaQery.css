@@ -1,0 +1,67 @@
+@media (min-width: 640px) { /* sm */
+    .px-24-sm {
+        padding-left: 1.5rem; 
+        padding-right: 1.5rem;
+    }
+    .h-80-sm{
+        height: 80px;
+    }
+    .w-44-sm{
+        width: 2.75rem;
+    }
+    .h-44-sm{
+        height: 2.75rem;
+    }
+    .text-2xl-sm{
+    font-size: 1.5rem; 
+        line-height: 2rem;
+    }
+    .text-xs-sm{
+    font-size: 0.75rem; /* 12px */
+        line-height: 1rem;
+    }
+        .sm-w-10 {
+        width: 2.5rem; /* 40px */
+    }
+    .sm-h-10 {
+        height: 2.5rem; /* 40px */
+    }   
+        .custom-padding {
+        padding-left: 1.5rem; /* sm:px-6 */
+        padding-right: 1.5rem;
+        padding-top: 2rem;   /* sm:py-8 */
+        padding-bottom: 2rem;
+    }
+        .sm-p-5 {
+        padding: 1.25rem; /* sm:p-5 */
+    }
+    .w-sm-3rem{
+        width: 3rem;
+    }
+    .h-sm-3rem{
+        height: 3rem;
+    }
+        .sm-text-base {
+        font-size: 1rem; /* 16px */
+        line-height: 1.5rem;
+    }
+        .sm-text-3xl {
+        font-size: 1.875rem; /* 30px */
+        line-height: 2.25rem;
+    }
+}
+
+@media (min-width: 1024px) { /* lg */
+    .px-32-lg {
+        padding-left: 2rem; 
+        padding-right: 2rem;
+    }
+        .custom-padding {
+        padding-left: 2rem; /* lg:px-8 */
+        padding-right: 2rem;
+    }
+    .text-11px{
+    font-size: 11px;
+    line-height: 1rem;
+}
+}

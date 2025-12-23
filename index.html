@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/all.min.css">
+    <link rel="stylesheet" href="./CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="./CSS/index-Style.css">
+    <link rel="stylesheet" href="./CSS/mediaQery.css">
+    <title>ContactHub-Smart Contact Manager</title>
+</head>
+
+<body class="min-vh-100 bg-slate-50">
+    <!---------------------------Header------------------------------>
+    <header id="header" class="bg-white-70 border-b-gray backdrop-blur-24 position-sticky top-0 z-3">
+        <div class="container mx-auto px-4 px-24-sm px-32-lg">
+            <div class="d-flex align-items-center justify-content-between h-80-sm h-64px">
+                <!--logo content-->
+                <div class="logo d-flex align-items-center gap-4">
+                    <div
+                        class="logo-img w-44-sm h-44-sm w-24px h-24px bg-linear-v600-iv600 d-flex align-items-center justify-content-center rounded-12px shadow-lg-violet">
+                        <i class="fa-solid fa-address-book text-white fs-18px"></i>
+                    </div>
+                    <div class="logo-content fw-bold text-gray-900 fs-5 text-2xl-sm ">
+                        <h1>Contact <span class="text-violet-600">Hub</span></h1>
+                        <p class="text-gray-500 fw-medium d-none d-sm-block fs-10px text-xs-sm">Smart Contact Manager
+                        </p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center gap-2 gap-sm-3">
+                    <button id="mainAddBtn"
+                        class="d-inline-flex align-items-center gap-2 px-3 py-2 bg-linear-v600-iv600 text-white rounded-12px border-0 fw-semibold addBtn-hover">
+                        <i class="fa-solid fa-plus"></i>
+                        Add Contact
+                    </button>
+                    <button
+                        class="d-flex align-items-center justify-content-center text-gray-500 rounded-12px w-40px h-40px border-0 bg-transparent btn-hover">
+                        <i class="fa-solid fa-bell"></i></i>
+                    </button>
+                    <button
+                        class="d-flex align-items-center justify-content-center text-gray-500 rounded-12px w-40px h-40px border-0 bg-transparent btn-hover">
+                        <i class="fa-solid fa-gear"></i>
+                    </button>
+                    <div class="user-image overflow-hidden w-9 h-9 sm-w-10 sm-h-10 rounded-xl ring-2-gray">
+                        <img class="w-100" src="./Images/imgi_1_avatar-4.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main id="main" class="container mx-auto custom-padding gap-3 gap-sm-4">
+        <!--status Cards-->
+        <section id="status" class="mb-4">
+            <div class="container gap-1 gap-sm-2">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="bg-white rounded-2xl shadow-sm px-4 py-2 border-gray-100 shadow-hover sm-p-3">
+                            <div class="d-flex align-items-center gap-2 gap-sm-3">
+                                <div
+                                    class="w-44px h-44px w-sm-3rem h-sm-3rem bg-linear-bl500-bl600 d-flex align-items-center justify-content-center shadow-lg-blue rounded-12px">
+                                    <i class="fa-solid fa-users text-white text-sm sm-text-base "></i>
+                                </div>
+                                <div>
+                                    <p
+                                        class="text-uppercase fw-medium text-gray-500 text-11px text-xs-sm pb-0 mb-0 mt-2">
+                                        total</p>
+                                    <p id="totalContacts" class="fw-bold text-gray-900 fs-5 text-2xl-sm mt-0 total">0
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="bg-white rounded-2xl shadow-sm px-4 py-2 border-gray-100 shadow-hover sm-p-3">
+                            <div class="d-flex align-items-center gap-2 gap-sm-3">
+                                <div
+                                    class="w-44px h-44px w-sm-3rem h-sm-3rem bg-linear-amb400-or500 d-flex align-items-center justify-content-center shadow-lg-blue rounded-12px">
+                                    <i class="fa-solid fa-star text-white text-sm sm-text-base"></i>
+                                </div>
+                                <div>
+                                    <p
+                                        class="text-uppercase fw-medium text-gray-500 text-11px text-xs-sm pb-0 mb-0 mt-2">
+                                        Favourite </p>
+                                    <p id="favTotalContacts" class="fw-bold text-gray-900 fs-5 text-2xl-sm mt-0">0</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="bg-white rounded-2xl shadow-sm px-4 py-2 border-gray-100 shadow-hover sm-p-3">
+                            <div class="d-flex align-items-center gap-2 gap-sm-3">
+                                <div
+                                    class="w-44px h-44px w-sm-3rem h-sm-3rem bg-linear-rose500-red600 d-flex align-items-center justify-content-center shadow-lg-blue rounded-12px">
+
+                                    <i class="fa-solid fa-heart-pulse text-white text-sm sm-text-base"></i>
+                                </div>
+                                <div>
+                                    <p
+                                        class="text-uppercase fw-medium text-gray-500 text-11px text-xs-sm pb-0 mb-0 mt-2">
+                                        Emergency</p>
+                                    <p id="emergencyTotalContacts" class="fw-bold text-gray-900 fs-5 text-2xl-sm mt-0">1
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="d-flex gap-8">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="flex-fill min-w-0">
+                            <div id="content-header" class=" mb-5">
+                                <div
+                                    class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-3 mb-3">
+                                    <div>
+                                        <h2 class="fw-bold text-gray-900 text-2xl sm-text-3xl">All Contacts</h2>
+                                        <p class="text-sm text-gray-500 ">Manage and organize your 3 contacts</p>
+                                    </div>
+                                </div>
+                                <div class="position-relative border-gray-200">
+                                    <input
+                                     id="searchInput"
+                                        class="w-100 form-control bg-white text-sm search-foucs placeholder-gray-400 text-gray-700 py-14px pr-4 ps-44px"
+                                        type="text" placeholder="Search by name, phone, or email">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="addCard" class="row g-3 ">
+                            <!--Cards-->
+
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="d-none d-xl-block align-self-start position-sticky top-28 space-y-5 flex-shrink-0">
+                            <section id="favorites-section"
+                                class="bg-white rounded-2xl shadow-sm border-gray-100 overflow-hidden">
+                                <div
+                                    class="border-b-gray-100 bg-linear-amber50-orange50 px-20px py-16px d-flex align-items-center gap-3">
+                                    <div
+                                        class="d-flex align-items-center justify-content-center w-36px h-36px shadow-md-amber bg-amber-orange rounded-lg mb-0">
+                                        <i class="fa-solid fa-star text-white text-sm"></i>
+                                    </div>
+                                    <div class="mt-0">
+                                        <h2 class="text-base fw-semibold text-gray-900">Favorites</h2>
+                                        <p class="text-gray-500 text-11px">Quick access to starred contacts</p>
+                                    </div>
+                                </div>
+                                <div id="favDiv" class=" py-8 overflow-y-auto p-3 scrollbar-hide space-y-3 max-h-320">
+                                </div>
+                            </section>
+                            <section id="Emergency-section"
+                                class="bg-white rounded-2xl shadow-sm border-gray-100 overflow-hidden">
+                                <div
+                                    class="border-b-gray-100 bg-linear-rose50-red50 px-20px py-16px d-flex align-items-center gap-3">
+                                    <div
+                                        class="d-flex align-items-center justify-content-center w-36px h-36px shadow-md-amber bg-linear-rose500-red600 rounded-lg mb-0">
+                                        <i class="fa-solid fa-heart-pulse text-white text-sm"></i>
+                                    </div>
+                                    <div class="mt-0">
+                                        <h2 class="text-base fw-semibold text-gray-900">Emergency</h2>
+                                        <p class="text-gray-500 text-11px">Important contacts for urgent calls</p>
+                                    </div>
+                                </div>
+                                <div id="emergencyDiv"
+                                    class=" py-8 overflow-auto p-3 scrollbar-hide space-y-3 max-h-320">
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+    <!--Contact Model-->
+    <div id="ContactModel" class="position-fixed d-none  inset-0 z-50">
+        <div id="blurBackDrop" class="position-fixed inset-0 bg-gray-900-60 backdrop-blur-sm"></div>
+        <div class="position-fixed inset-0 d-flex align-items-center justify-content-center p-4 ">
+            <div
+                class="bg-white rounded-2xl shadow-2xl overflow-y-auto scrollbar-hide position-relative w-100 max-h-90vh max-w-lg">
+                <!--Modal Header-->
+                <div
+                    class="position-sticky bg-white top-0 border-b-gray-100 d-flex align-items-center justify-content-between py-16px px-24px">
+                    <h2 class="fw-bold text-gray-900 fs-5">Add Contact</h2>
+                    <button id="contact-x"
+                        class="text-gray-400 d-flex align-items-center justify-content-center xMark border-0 bg-transparent rounded-lg w-36px h-36px cancelModalBtn">
+                        <i class="fa-solid fa-xmark text-lg"></i>
+                    </button>
+                </div>
+                <!--Contact Form-->
+                <form id="contactForm" class=" p-4 space-y-5">
+                    <!--Avatar Upload-->
+                    <div class="d-flex flex-column align-items-center gap-3 pb-3">
+                        <div
+                            class="avatarPrev rounded-circle w-96px h-96px bg-linear-bl500-bl600 text-white fw-bold d-flex align-items-center justify-content-center sm-text-3xl">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <label for="avatarPath"
+                            class="d-inline-flex align-items-center bg-gray-100 gap-2 py-2 px-4 rounded-lg cursor-pointer fw-medium text-gray-700 labl-hover">
+                            <i class="fa-solid fa-camera text-gray-500"></i>
+                            <span>Change Photo</span>
+                        </label>
+                        <input type="file" class="d-none" name="avatarPath" id="avatarPath">
+                    </div>
+                    <!--Name-->
+                    <div>
+                        <label class="d-block text-sm fw-medium text-gray-700 mb-2" for="contactName"> Full Name <span
+                                class="text-rose-500">*</span></label>
+                        <input type="text" id="contactName" name="contactName" placeholder="Enter your Full Name"
+                            class="w-100 form-control py-2 px-4 bg-gray-50 border-gray-200 text-sm form-input">
+                        <p id="contactNameError" class="text-rose-500 text-sm mt-1 d-none">Name should contain only
+                            letters and spaces (2-50 characters)</p>
+                    </div>
+                    <!--phone-->
+                    <div>
+                        <label class="d-block text-sm fw-medium text-gray-700 mb-2" for="contactPhone">Phone Number<span
+                                class="text-rose-500">*</span></label>
+                        <input type="number" id="contactPhone" name="contactPhone" id="contactPhone"
+                            placeholder="e.g., 01012345678"
+                            class="w-100 form-control py-2 px-4 bg-gray-50 border-gray-200 text-sm form-input">
+                        <p id="contactPhoneError" class="text-rose-500 text-sm mt-1 d-none">Please enter a valid
+                            Egyptian phone number</p>
+                    </div>
+                    <!--email-->
+                    <div>
+                        <label class="d-block text-sm fw-medium text-gray-700 mb-2" for="contactEmail">Email
+                            Address<span class="text-rose-500">*</span></label>
+                        <input type="email" id="contactEmail" name="contactEmail" id="contactEmail"
+                            placeholder="name@example.com"
+                            class="w-100 form-control py-2 px-4 bg-gray-50 border-gray-200 text-sm form-input">
+                        <p id="contactEmailError" class="text-rose-500 text-sm mt-1 d-none">Please enter a valid email
+                            address</p>
+                    </div>
+                    <!--Adress-->
+                    <div>
+                        <label class="d-block text-sm fw-medium text-gray-700 mb-2" for="contactAdress">Address</label>
+                        <input type="text" id="contactAdress" name="contactAdress" id="contactEmail"
+                            placeholder="Enter address"
+                            class="w-100 form-control py-2 px-4 bg-gray-50 border-gray-200 text-sm form-input">
+                    </div>
+                    <!--Group-->
+                    <div>
+                        <label class="d-block text-sm fw-medium text-gray-700 mb-2" for="contactGroup">Group</label>
+                        <select id="contactGroup" name="contactGroup"
+                            class="w-100 Other py-2 px-4 bg-gray-50 border-gray-200 text-sm form-input">
+                            <option value="Select a group"></option>
+                            <option value="family">Family</option>
+                            <option value="friends">Friends</option>
+                            <option value="work">Work</option>
+                            <option value="school">School</option>
+                            <option value="other">Other</option>
+                        </select>
+
+                    </div>
+                    <!--Notes-->
+                    <div>
+                        <label class="d-block text-sm fw-medium text-gray-700 mb-2" for="contactNotes">Notes</label>
+                        <textarea name="contactNotes" id="contactNotes" rows="2"
+                            placeholder="Add notes about this contact"
+                            class="w-100 Other py-2 px-4 bg-gray-50 border-gray-200 text-sm form-input resize-none"></textarea>
+
+                    </div>
+                    <!--Check boxes-->
+                    <div class="d-flex flex-wrap gap-4 py-2 group">
+                        <label class="d-inline-flex align-items-center gap-2 cursor-pointer ">
+                            <input type="checkbox" id="contactFavorite"
+                                class="text-violet-600  border-gray-400 custom-input">
+                            <span class="text-sm fw-medium text-gray-600 group">
+                                <i class="fa-solid fa-star text-amber-400 "></i>
+                                Favorite
+                            </span>
+                        </label>
+                        <label class="d-inline-flex align-items-center gap-2 cursor-pointer ">
+                            <input type="checkbox" id="contactEmergency"
+                                class="text-violet-600  border-gray-400 custom-input">
+                            <span class="text-sm fw-medium text-gray-600 group">
+                                <i class="fa-solid fa-heart-pulse text-rose-500"></i>
+                                Emergency
+                            </span>
+                        </label>
+
+                    </div>
+                    <!--Form Action-->
+                    <div class="d-flex flex-column-reverse flex-sm-row gap-3 pt-2">
+                        <button type="button" id="cancelModalBtn"
+                            class="flex-1 px-5 py-12px bg-gray-100 text-gray-700 rounded-xl fw-semibold text-sm cursor-pointer border-0 btn-action cancelModalBtn">Cancel</button>
+                        <button type="button" id="saveModalBtn"
+                            class="flex-1 px-5 py-12px bg-linear-v600-iv600 text-white text-gray-700 rounded-xl fw-semibold text-sm cursor-pointer border-0 btn-action">
+                            <i class="fa-solid fa-check me-2"></i>
+                            Save Contact
+                        </button>
+                        <button type="button" id="UpdateContactModal"
+                            class="flex-1 d-none text-nowrap px-5 py-12px bg-linear-amb400-or500 text-white text-gray-700 rounded-xl fw-semibold text-sm cursor-pointer border-0 btn-action">
+                            <i class="fa-solid fa-check me-2"></i>
+                            Update Contact
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="mainActionCards" class="position-fixed inset-0 z-50  d-none">
+        <div class="position-fixed inset-0 d-flex align-items-center justify-content-center p-4 bg-dark-opacity">
+            <!--Added Model-->
+            <div id="successModal2" class="bg-white rounded-2xl shadow-2xl position-relative w-100 max-w-lg d-none z-3">
+                <div class="d-flex justify-content-center align-items-center flex-column gap-5">
+                    <div class="position-fixed inset-0 d-flex align-items-center justify-content-center p-4">
+                        <div class="success-card">
+                            <div class="success-icon" aria-hidden="true">
+                                <svg viewBox="0 0 120 120" class="check-svg">
+                                    <circle class="check-circle" cx="60" cy="60" r="46"></circle>
+                                    <path class="check-mark" d="M40 62 L54 76 L82 48"></path>
+                                </svg>
+
+                            </div>
+                            <h3 id="actionModalTitle" class="text-gray-700">Added!</h3>
+                            <p id="actionModalMessage" class="text-gray-500">You added the contact succefully</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!-- Invalid / Decline Modal -->
+<div id="invalidModal" class="result-modal d-none">
+  <div class="result-card">
+
+    <div class="result-icon" aria-hidden="true">
+      <svg viewBox="0 0 120 120" class="result-svg">
+        <circle class="x-circle" cx="60" cy="60" r="46"></circle>
+
+        <!-- X -->
+        <path class="x-line x-line-1" d="M42 42 L78 78"></path>
+        <path class="x-line x-line-2" d="M78 42 L42 78"></path>
+      </svg>
+    </div>
+
+    <h2 id="invalidTitle" class="result-title">Invalid</h2>
+    <p id="invalidMessage" class="result-subtitle">
+      Something went wrong. Please try again.
+    </p>
+
+    <button id="invalidOkBtn" type="button" class="btn btn-primary px-4 fw-semibold mt-3">
+      OK
+    </button>
+
+  </div>
+</div>
+
+            <!-- delete Card-->
+            <div id="deleteCardModel" class="result-modal d-none deleteCard">
+                <div class="result-card">
+                    <!-- Warning Icon -->
+                    <div class="delete-modal__icon " aria-hidden="true">
+                        <svg class="delete-modal__icon-svg" viewBox="0 0 120 120">
+                            <circle class="delete-modal__icon-circle" cx="60" cy="60" r="50"></circle>
+                            <line class="delete-modal__icon-line" x1="60" y1="32" x2="60" y2="68"></line>
+                            <circle class="delete-modal__icon-dot" cx="60" cy="84" r="4"></circle>
+                        </svg>
+                    </div>
+                    <!-- Title -->
+                    <h3 id="deleteModalTitle" class="delete-modal__title">Delete Contact?</h3>
+
+                    <!-- Message -->
+                    <p class="delete-modal__text">
+                        Are you sure you want to delete <span id="deleteContactName">this contact</span>?
+                        This action cannot be undone.
+                    </p>
+                    <!-- Actions -->
+                    <div class="delete-modal__actions">
+                        <button id="confirmDeleteBtn" type="button" class="btn btn-danger px-4 fw-semibold">
+                            Yes, delete it!
+                        </button>
+
+                        <button id="cancelDeleteBtn" type="button" class="btn btn-secondary px-4 fw-semibold">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./JS/main.js"></script>
+</body>
+
+</html>
